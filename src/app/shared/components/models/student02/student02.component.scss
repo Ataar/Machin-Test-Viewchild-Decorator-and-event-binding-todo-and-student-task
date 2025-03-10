@@ -1,0 +1,37 @@
+h1{
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(55, 2, 59);
+}
+
+.col-md-4
+{
+    margin: 0 auto;
+    
+}
+.card
+{
+  background:linear-gradient(to top , green , pink );
+  border-radius:15px;
+//  border-right: 90%;
+}
+
+
+.btn-outline-info:hover
+{
+    background: rgb(14, 1, 1);
+    border: 2px solid #000;
+    
+}
+
+.form-group 
+{
+    font-family: Georgia;
+    font-weight: bold
+}
+
+table{
+    color:white;
+    text-align: center;
+}

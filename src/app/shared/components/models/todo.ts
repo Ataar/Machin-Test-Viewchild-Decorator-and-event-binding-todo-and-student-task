@@ -1,6 +1,5 @@
 export interface Itodo
 {
-    todoItem:string
+todo:string;
 }
-
-
+    

@@ -1,46 +1,47 @@
 
-<h3 class="bg-dark text-center p-1 text-white mt-5">Student Task</h3>
+    <h1>Student Task</h1>
     <div class="row">
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="text">Name</label>
-        <input #name type="text" class="form-control">
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input #email type="email" class="form-control">
-      </div>  
+    <div class="col-md-4 text-white">
+    <div class="form-group">
+    <label for="text">Name</label>
+    <input #name type="text" class="form-control">
+    </div> 
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input #email type="email" class="form-control">
+     </div>     
+        
+        <div class="form-group">
+            <label for="number">Phone</label>
+            <input #phone type="number" class="form-control">
+            </div>     
 
-      <div class="form-group">
-        <label for="Phone">Phone</label>
-        <input #phone type="number" class="form-control">
-      </div> 
-       
-       <button (click)="onClick(name,email,phone)" class="btn btn-outline-info">Add Student</button>
+            <div class="form-group">
+             <button (click)="addB(name , email , phone)" class="btn btn-outline-primary">Add Student</button>
+            </div>        
     </div>
 
-    <div class="col-md-6 column">
-    <div class="table-responsive">
-            <table class="table table-bordered  text-white text-center">
-              <thead class="styleTH">
-                <tr>
-                  <th>SR NO</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                </tr>
-              </thead>
-               <tbody class="styleTD">
-                <tr  *ngFor="let arr of stdTable; let i = index">
-                  <td>{{i+1}}</td>
-                  <td>{{arr.fname}}</td>
-                  <td>{{arr.email}}</td>
-                  <td>{{arr.phone}}</td>
-                </tr>
-               </tbody>
-            </table>
 
-          </div>
-        </div>
-      </div>
+         <div class="col-md-8 mt-4">
+          <div class="table-responsive">
+            <table class="table table-bordered text-white text-center">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let arr of sTable; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{arr.name}}</td>
+                        <td>{{arr.email}}</td>
+                        <td>{{arr.phone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>  
+         </div>
+</div>

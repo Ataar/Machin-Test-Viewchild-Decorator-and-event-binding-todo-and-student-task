@@ -1,6 +1,6 @@
 export interface Istudent
 {
-    fname:string;
+    name:string;
     email:string;
     phone:number
 }

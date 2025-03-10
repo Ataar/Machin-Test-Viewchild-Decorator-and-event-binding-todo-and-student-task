@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Itodo } from '../models/todo';
 
 @Component({
@@ -7,48 +7,33 @@ import { Itodo } from '../models/todo';
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent implements OnInit {
+ 
+ todoArr : Array<Itodo> = [
 
-  todoArr :Array<Itodo> = [
-   {
-    todoItem : 'JavaScript'
-   }
-  ]
-  constructor() { }
+ 
 
-   @ViewChild('get')getdata !: ElementRef;
-
-  ngOnInit(): void  {
-    let storData = localStorage.getItem('get')
-    if(storData)
-    {
-       this.todoArr = JSON.parse(storData);
-    }
-       
-  }
+ ]
   
-
-  addB()
-  {
-     let newObj : Itodo = {
-       todoItem : this.getdata.nativeElement.value
-      }
-      this.todoArr.push(newObj)
-      localStorage.setItem('get',JSON.stringify(this.todoArr))
-
+  
+  constructor() { }
+  ngOnInit(): void {
+    let stordata = localStorage.getItem('obj')
+    if(stordata)
+    {
+      this.todoArr = JSON.parse(stordata)
     }
-      
-      
-      
-      
-      
-   
-  // addB(get : HTMLInputElement)
-  // {
-  //   let newObj :Itodo = {
-  //     todoItem: get.value,
-  //   }
-  //     get.value = '';
-  //     this.todoArr.push(newObj)
-  //     localStorage.setItem('getObj',JSON.stringify(this.todoArr))
-  //   }
+  }
+
+   addB(get01 : HTMLInputElement)
+   {
+      let newObj:Itodo = 
+      {
+        todo : get01.value
+      }
+        console.log(newObj)
+        get01.value = ''; 
+      this.todoArr.push(newObj)
+      localStorage.setItem('obj' , JSON.stringify(this.todoArr))
+   }
+
 }

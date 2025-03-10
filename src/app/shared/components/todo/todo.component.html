@@ -1,20 +1,21 @@
-<h3 class="bg-dark text-white text-center p-2">Todo Task</h3>
+
+<h1>Todo Task</h1>
 <div class="row">
-    <div class="col-md-4 mt-4">
-     <div class="form-group">
-        <label for="text"  class="font-weight-bold">Todo Item</label>
-        <input #get type="text"   class="form-control">
-        <!-- <button (click)="addB(get)" class="btn btn-outline-info mt-3">Add Todo</button> -->
-        <button (click)="addB()" class="btn btn-outline-info mt-3">Add Todo</button>
+     <div class="col-md-4">
+      <div class="form-group">
+        <label for="text">Todo Item</label>
+        <input #get type="text" class="form-control">
+         
+        <div class="form-group mt-3">
+            <button (click)="addB(get)"  class="btn btn-outline-primary">Add Todo</button>
+        </div>
+      </div>  
+     </div>
+     <div class="col-md-4 mt-4">
+       <ul class="list-group">
+        <li *ngFor="let arr of todoArr" class="list-group-item mb-4">
+          Hello {{arr.todo}}
+        </li>
+       </ul>
      </div>
     </div>
-    
-    <div class="col-md-4 mt-5">
-        <ul class="list-group">
-            <li *ngFor="let arr of todoArr" class="list-group-item">
-              Hello  {{arr.todoItem}}
-            </li>
-        </ul>
-    </div>
-    
-</div>

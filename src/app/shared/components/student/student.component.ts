@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Istudent } from '../models/student';
 
 @Component({
@@ -7,50 +7,41 @@ import { Istudent } from '../models/student';
   styleUrls: ['./student.component.scss']
 })
 export class StudentComponent implements OnInit {
-  stdTable : Array<Istudent> = [
-
-    {
-       fname:'Rohan',
-       email:'Rohan@gmail.com',
-       phone:9876453653
-    }
+   
+  sTable :Array<Istudent> = [
+    
   ]
-
-  constructor() { }
-
-
+   
+   
+  constructor() {
+    let data = localStorage.getItem('getObj')
+    if(data)
+    {
+      this.sTable = JSON.parse(data)
+    }
+   }
 
   ngOnInit(): void {
-
-    let stdData = localStorage.getItem('getObj')
-    if(stdData)
-    {
-       this.stdTable = JSON.parse(stdData)
-    }
+   
   }
-  
-    onClick(
-      
-      nameControl:HTMLInputElement,
-      emailControl:HTMLInputElement,
-      phoneControl:HTMLInputElement)
+
+  addB(nameControl: HTMLInputElement,emailControl:HTMLInputElement,
+    phoneControl:HTMLInputElement)
+  {
+    let stdObj : Istudent = 
     {
-       let stdObj : Istudent = 
-       {
-        fname:nameControl.value,
-        email:emailControl.value,
-        phone:+phoneControl.value
-       }
-       console.log(stdObj)
-        nameControl.value = '';
-        emailControl.value = '';
-        phoneControl.value = '';
-       
-
-      this.stdTable.push(stdObj)
-      localStorage.setItem('getObj',JSON.stringify(this.stdTable))
+     name:nameControl.value,
+     email:emailControl.value,
+     phone:+phoneControl.value
     }
-
+    console.log(stdObj)
+     nameControl.value = '';
+     emailControl.value = '';
+     phoneControl.value = '';
     
+
+   this.sTable.push(stdObj)
+   localStorage.setItem('getObj',JSON.stringify(this.sTable))
+  }
 
 }
