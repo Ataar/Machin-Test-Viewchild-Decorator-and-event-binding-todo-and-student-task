@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Istd } from '../std02';
+import { Istd } from '../models/std02';
 
 @Component({
   selector: 'app-student02',
